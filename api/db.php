@@ -3,7 +3,7 @@ date_default_timezone_set("Asia/Taipei");
 session_start();
 class DB{
 
-    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=db99";
+    protected $dsn = "mysql:host=localhost;charset=utf8;dbname=112-bs5-crud";
     protected $pdo;
     protected $table;
     
@@ -174,20 +174,20 @@ $Menu=new DB('menu');
 //     $DB=$Title;
 // }
 
-if (isset($_GET['do'])) {
+// if (isset($_GET['do'])) {
     
-    if (isset(${ucfirst($_GET['do'])})) {
-        $DB = ${ucfirst($_GET['do'])};
-    }
+//     if (isset(${ucfirst($_GET['do'])})) {
+//         $DB = ${ucfirst($_GET['do'])};
+//     }
 
-} else {
-    $DB = $Title;
-}
+// } else {
+//     $DB = $Title;
+// }
 
 // 增加進站人數檢查
-if(!isset($_SESSION['visited'])){
-    $Total->q("update `total` set `total`=`total`+1 where `id`=1");
-    $_SESSION['visted']=1;
-}
+// if(!isset($_SESSION['visited'])){
+//     $Total->q("update `total` set `total`=`total`+1 where `id`=1");
+//     $_SESSION['visted']=1;
+// }
 
 ?>
