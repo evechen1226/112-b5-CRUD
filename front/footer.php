@@ -57,13 +57,18 @@
               </div> -->
             </div>
           </div>
-          <div class="container-fluid">
+          <div class="container">
             <div class="copyright">
               <div class="row">
-                <div class="col text-center mb-3">
+                <div class="col-md-6 text-center mb-3 text-md-start">
                   &copy; <a class="border-bottom">Evelyn</a>, All Right Reserved.
                 </div>
+                <div class="col-md-6 text-center text-md-end">
+                  <div class="footer-menu">
+                    <div><span class="t">進站總人數 : <?= $Total->find(1)['total']; ?></span></div>
 
+                  </div>
+                </div>
               </div>
             </div>
           </div>
