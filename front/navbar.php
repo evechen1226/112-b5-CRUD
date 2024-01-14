@@ -11,7 +11,7 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <div class="navbar-nav ms-auto py-0 pe-4 nav-text">
                 <a href="index.html" class="nav-item nav-link active">Home</a>
-                <a href="about.html" class="nav-item nav-link">關於我們</a>
+                <a href="#about" class="nav-item nav-link">關於我們</a>
                 <a href="service.html" class="nav-item nav-link">提供服務</a>
                 <a href="menu.html" class="nav-item nav-link">餐點選單</a>
                 <div class="nav-item dropdown">
