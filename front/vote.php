@@ -1,5 +1,5 @@
         <div class="mx-auto text-center">
-          <h3 class="text-primary my-4 ">食材競選 <i class="fa fa-utensils text-primary me-2">由您主宰下一頓美食之旅！</i></h3>
+          <h3 class="f-color my-4 ">食材競選 <i class="fa fa-utensils text-primary me-2"></i>由您主宰下一頓美食之旅！</h3>
           <p>投下您的選票，選擇您最喜愛的食材，成為我們下次特色料理的靈感之源。與您一起進入美味的新世界！</p>
         </div>
         <div id="img-carousel" class="carousel slide my-5" data-bs-ride="carousel">
@@ -70,4 +70,3 @@
           </div>
 
         </div>
-

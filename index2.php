@@ -16,7 +16,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;600&family=Nunito:wght@600;700;800&family=Pacifico&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@700&family=Noto+Sans+TC:wght@500;700&family=Sevillana&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap" rel="stylesheet">
 
     <!-- Libraries Stylesheet -->
     <link href="lib/animate/animate.min.css" rel="stylesheet">
@@ -89,22 +89,26 @@
 
 
         <!-- Menu Start -->
-        <?php //include "./front/menu.php"; ?>
+        <?php //include "./front/menu.php"; 
+        ?>
         <!-- Menu End -->
 
 
         <!-- Reservation Start -->
-        <?php //include "./front/reservation.php"; ?>
+        <?php //include "./front/reservation.php"; 
+        ?>
         <!-- Reservation Start -->
 
 
         <!-- Team Start -->
-        <?php //include "./front/team.php"; ?>
+        <?php //include "./front/team.php"; 
+        ?>
         <!-- Team End -->
 
 
         <!-- Testimonial Start -->
-        <?php //include "./front/testimonail.php"; ?>
+        <?php //include "./front/testimonail.php"; 
+        ?>
         <!-- Testimonial End -->
 
 
