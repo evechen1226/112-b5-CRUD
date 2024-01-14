@@ -1,5 +1,5 @@
         <div class="container-xxl position-relative p-0">
-          <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4 px-lg-5 py-3 py-lg-0">
+          <nav class="navbar navbar-expand-lg navbar-dark bg-green px-4 px-lg-5 py-3 py-lg-0">
             <a href="" class="navbar-brand p-0">
               <h1 class="text-primary m-0 title-font nav-icon"><i class="fa-solid fa-seedling me-3"></i>Green
                 Planet</h1>
