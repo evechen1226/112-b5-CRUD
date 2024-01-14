@@ -76,10 +76,10 @@
         <!-- Navbar & Hero End -->
 
 
-        <!-- Service/Vote Start -->
+        <!-- Vote Start -->
         <?php include "./front/vote.php"; ?>
-        
-        <!-- Service/Vote End -->
+
+        <!-- Vote End -->
 
 
         <!-- About Start -->
