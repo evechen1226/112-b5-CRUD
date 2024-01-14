@@ -1,0 +1,16 @@
+bowl-1850039.jpg
+bowl-1850039_1280.jpg
+cookies-2991174_640.jpg
+salmon-518032_640.jpg
+grapes-3550733_640.jpg
+top-view-1248955_640.jpg
+coffee-beans-1291656_640.jpg
+wheat-865152_640.jpg
+tomatoes-5356_640.jpg
+cucumbers-849269_640.jpg
+mushrooms-389421_640.jpg
+chestnut-1710430_640.jpg
+figs-2079166_640.jpg
+carrots-673184_640.jpg
+file_list.bat
+list.txt

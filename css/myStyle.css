@@ -43,3 +43,27 @@ color: white ;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+.img-carousel-button{
+    width: 10px !important; 
+    height: 10px !important;
+    background-color: #1E9D8A !important;
+}
+
+.img-carousel-arrow {
+    width: 10px !important;
+    height: 10px !important;
+    background-color: #CBF3F0 !important;
+    color: #CBF3F0;
+}
+
+.section-title::before {
+    position: absolute;
+    content: "";
+    width: 45px;
+    height: 2px;
+    top: 50%;
+    left: -55px;
+    margin-top: -1px;
+    background: var(--primary);
+}

@@ -226,7 +226,7 @@
 }
 
 .service-item:hover * {
-    color: var(--light) !important;
+    color: var(--light);
 }
 
 
