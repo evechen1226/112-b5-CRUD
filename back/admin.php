@@ -5,14 +5,15 @@
 		<table width="100%">
 			<tbody>
 				<tr class="yel">
-
-					<td width="45%">帳號</td>
-					<td width="45%">密碼</td>
-					<td width="10%">刪除</td>
+					<td width="20%">帳號</td>
+					<td width="20%">密碼</td>
+					<td width="20%">姓氏</td>
+					<td width="20%">名字</td>
+					<td class="ct" width="5%">刪除</td>
 				</tr>
 				<?php
 
-				$rows = $DB->all();
+				$rows = $Admin->all();
 				foreach ($rows as $row) {
 				?>
 					<tr>
@@ -22,6 +23,10 @@
 						</td>
 
 						<td><input type="text" name="pw[]" value="<?= $row['pw']; ?>" style="width:90%">
+						</td>
+						<td><input type="text" name="pw[]" value="<?= $row['surname']; ?>" style="width:90%">
+						</td>
+						<td><input type="text" name="pw[]" value="<?= $row['name']; ?>" style="width:90%">
 						</td>
 
 						<td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
