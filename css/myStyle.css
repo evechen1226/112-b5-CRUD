@@ -1,3 +1,14 @@
+:root {
+    --primary: #FEA116;
+    --light: #F1F8FF;
+    --dark: #0F172B;
+    /* mycolor */
+    --green: #1E9D8A ;
+    --appleRed: #FA425A;
+    --orage: #F37950;
+    --banna: #F6BC59;
+}
+
 .title-font{
     font-family: 'Amatic SC', sans-serif;
    
