@@ -167,11 +167,11 @@ $Ad = new DB('ad');
 $Mvim = new DB('mvim');
 $Image = new DB('image');
 $News = new DB('news');
-$Admin = new DB('admin');
 $Menu = new DB('menu');
 
 // 112-B5-CRUD 使用資料表
 $Vote= new DB('sub_vote');
+$Admin = new DB('admin');
 
 
 

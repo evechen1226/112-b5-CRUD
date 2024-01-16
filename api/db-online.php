@@ -174,6 +174,7 @@ $Menu = new DB('menu');
 
 // 112-B5-CRUD 使用資料表
 $Vote= new DB('sub_vote');
+$Admin = new DB('admin');
 
 //使用下列方法時，要注意之後變數的取名不能重複
 //get_defined_vars()：將自定義的變數以陣列列出
