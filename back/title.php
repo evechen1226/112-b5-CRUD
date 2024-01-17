@@ -1,38 +1,49 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-	<p class="t cent botli">網站標題管理</p>
+<style>
+	img{
+		width: 200px;
+		height: 100px;
+	}
+</style>
+<div>
+	<h3>網站標題管理</h3>
 	<!-- <form method="post" target="back" action="?do=tii"> -->
 	<form method="post" action="../api/edit.php">
-		<table width="100%">
+		<table width="100%" class="table table-striped text-center">
 			<tbody>
-				<tr class="yel">
-					<td width="45%">網站標題</td>
-					<td width="23%">替代文字</td>
-					<td width="7%">顯示</td>
-					<td width="7%">刪除</td>
-					<td></td>
-				</tr>
+				<thead>
+					<tr">
+						<th class="col text-center">網站標題</th>
+						<th class="col text-center">替代文字</th>
+						<th class="col text-center">顯示</th>
+						<th class="col text-center">刪除</th>
+						<th class="col text-center"></th>
+					</tr>
+				</thead>
 				<?php $rows = $Title->all();
 				foreach ($rows as $row) {
 				?>
-				<tr>
-					<td width="45%">
-						<img src="./img/<?= $row['img']; ?>" alt="" style="width:300px;height:30px">
-					</td>
+					<tr>
+						<td>
+							<img src="./img/<?= $row['img']; ?>" alt="">
+						</td>
 
-					<td width="23%"><input type="text" name="text[]" value="<?= $row['text']; ?>" style="width:90%">
-					<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
-				</td>
+						<td>
+							<input class="form-control" type="text" name="text[]" value="<?= $row['text']; ?>" style="width:90%">
+							<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
+						</td>
 
-					<td width="7%"><input type="radio" name="sh[]" value="<?= $row['id']; ?>" id="">
-					</td>
+						<td>
+							<input class="form-check-input mt-0" type="radio" name="sh[]" value="<?= $row['id']; ?>" id="">
+						</td>
 
-					<td width="7%"><input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-					</td>
+						<td>
+							<input class="form-check-input mt-0" type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+						</td>
 
-					<td>
-						<input type="button" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')" value="更新圖片">
-					</td>
-				</tr>
+						<td>
+							<input class="" type="button" onclick="op('#cover','#cvr','./modal/upload.php?table=<?= $do; ?>&id=<?= $row['id']; ?>')" value="更新圖片">
+						</td>
+					</tr>
 				<?php
 				} ?>
 			</tbody>
