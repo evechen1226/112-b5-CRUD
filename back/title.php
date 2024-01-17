@@ -37,8 +37,10 @@
 	<!-- <form method="post" target="back" action="?do=tii"> -->
 
 
-			
-				<input class="btn btn-green mx-end" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片">
+	<div class="d-flex">
+		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"><i class="fa-solid fa-plus"></i></button>
+	</div>
+
 
 
 

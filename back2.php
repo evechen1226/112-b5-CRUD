@@ -12,25 +12,49 @@
 
 
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
 
   <!-- 原始的link -->
   <link href="./css/css.css" rel="stylesheet" type="text/css">
   <script src="./js/jquery-1.9.1.min.js"></script>
   <script src="./js/js.js"></script>
-  
+
 </head>
+<style>
+  .bg-green {
+    background-color: #1E9D8A !important;
+    color: white !important;
+  }
+
+  .nav-text {
+    font-family: 'Amatic SC', sans-serif;
+  }
+
+  .btn-sign {
+    border: 2px solid white;
+    border-radius: .5rem;
+    background-color: #54deca;
+    font-weight: bold;
+
+  }
+</style>
 
 <body>
 
-  <header class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3" href="#">Company name</a>
+  <header class="navbar bg-green sticky-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2 me-0 px-3" href="#"><i class="fa-solid fa-seedling me-3"></i>Green Planet</a>
     <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <input class="form-control form-control-dark w-100" type="text" placeholder="Search" aria-label="Search">
+
+    <!-- 搜尋列 -->
+    <!-- <input id="searchInput" class="form-control form-control-dark w-100" type="text" placeholder="請輸入管理選單名稱，按下Enter。" aria-label="Search"> -->
+
     <div class="navbar-nav">
       <div class="nav-item text-nowrap">
-        <button class="nav-link px-3 " onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">Sign out</button>
+        <button class="btn px-3 btn-sign" onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">Sign out</button>
       </div>
     </div>
   </header>
@@ -116,33 +140,56 @@
         </div>
         <!-- 動畫 拆線圖 -->
 
-				<!-- 引入頁面 start -->
-				<?php
-				$do = $_GET['do'] ?? 'title';
-				$file = "./back/{$do}.php";
-				if (file_exists($file)) {
-					include $file;
-				} else {
-					include "./back/title.php";
-				}
-				?>
-				<!-- 引入頁面 end-->
+        <!-- 引入頁面 start -->
+        <?php
+        $do = $_GET['do'] ?? 'title';
+        $file = "./back/{$do}.php";
+        if (file_exists($file)) {
+          include $file;
+        } else {
+          include "./back/title.php";
+        }
+        ?>
+        <!-- 引入頁面 end-->
 
       </main>
     </div>
   </div>
 
-  
+
 
   <!-- modal start -->
   <div id="cover" style="display:none; ">
     <div id="coverr">
-      <a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" onclick="cl('#cover')">X</a>
-      <div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
+      <div id="cvr" class="container p-3" style="position:absolute; margin:auto; z-index:9898;"></div>
+      <div class="modal-footer d-flex ">
+        <button type="button" class="btn " onclick="cl('#cover')" style="z-index:9999"><i class="fa-solid fa-xmark"></i></button>
+      </div>
     </div>
   </div>
   <!-- modal end -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <script>
+    // 取得搜尋框元素
+    let searchInput = document.getElementById('searchInput');
+
+    // 監聽按鍵事件
+    searchInput.addEventListener('keydown', function(event) {
+      // 按下 Enter 鍵（keyCode 13）
+      if (event.keyCode === 13) {
+        // 取得搜尋框的值
+        let searchTerm = searchInput.value.trim();
+
+        // 如果搜尋框有值，則導向到指定的頁面
+        if (searchTerm !== '') {
+          // 導向到網站標題管理頁面
+          window.location.href = '?do=title';
+        }
+      }
+    });
+  </script>
+
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>
