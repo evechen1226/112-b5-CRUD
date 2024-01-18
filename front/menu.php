@@ -1,3 +1,10 @@
+        <style>
+          .f-date {
+            font-weight: 100;
+            font-size: 14px;
+            color: #54deca;
+          }
+        </style>
         <div class="container-xxl py-5">
           <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
@@ -17,7 +24,7 @@
                     $now = $_GET['p'] ?? 1;
                     $strat = ($now - 1) * $div;
 
-                    $rows = $News->all(['sh' => 1]);
+                    $rows = $News->all(['sh' => 1], " order by `date` desc ");
                     foreach ($rows as $row) {
                     ?>
                       <div class="col-lg-6">
@@ -26,7 +33,7 @@
                           <div class="w-100 d-flex flex-column text-start ps-4">
                             <h5 class="d-flex justify-content-between border-bottom pb-2">
                               <span><?= $row['title']; ?></span>
-                              <span class="text-primary"><?= $row['good']; ?></span>
+                              <div class="f-date"><?= $row['date']; ?></div>
                             </h5>
 
                             <small class="fst-italic"><?= $row['eng_title']; ?>
