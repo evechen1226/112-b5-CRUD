@@ -159,7 +159,7 @@
                                 </div>
                                 <input type="hidden" name="table" value="admin">
                                 <!-- Submit button -->
-                                <button type="submit" class="btn bg-green text-light btn-block mb-4 shadow-sm btn-hover me-5">
+                                <button type="submit" class="btn bg-green text-light btn-block mb-4 shadow-sm btn-hover me-5" >
                                     註冊
                                 </button>
                                 <button type="reset" class="btn bg-green text-light btn-block mb-4 shadow-sm btn-hover">

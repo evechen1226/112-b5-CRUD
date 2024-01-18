@@ -65,8 +65,8 @@
                     <div class="col-lg-6 text-center text-lg-start">
                         <h1 class="display-3 text-white animated slideInLeft title-font">Enjoy Our<br>Delicious Meal</h1>
                         <p class="text-white animated slideInLeft mb-4 pb-2">以新鮮、有機的自然食材為基礎，主打美味的蔬食料理。每道菜品都融入大自然的綠意，呈現獨特的風味，滿足您對美好飲食的追求，是喜愛蔬食生活的理想選擇。</p>
-                        <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A
-                            Table</a>
+                        <!-- <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A
+                            Table</a> -->
                     </div>
                     <div class="col-lg-6 text-center text-lg-end overflow-hidden">
                         <!-- <img class="img-fluid" src="img/hero.png" alt=""> -->
@@ -89,7 +89,7 @@
 
 
         <!-- Menu Start -->
-        <?php include "./front/menu.php"; 
+        <?php include "./front/menu.php";
         ?>
         <!-- Menu End -->
 
