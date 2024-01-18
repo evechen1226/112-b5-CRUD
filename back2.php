@@ -47,7 +47,7 @@
 </style>
 
 <body>
-  <div class="w-100">
+  <div class="">
     <header class="navbar bg-green sticky-top flex-md-nowrap p-0 shadow">
       <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2" href="#"><i class="fa-solid fa-seedling me-1"></i>Green Planet</a>
       <div class="flex"><button class="mx-auto navbar-toggler position-absolute d-md-none collapsed me-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
@@ -59,15 +59,16 @@
 
       <div class="navbar-nav">
         <div class="nav-item text-nowrap">
-          <button class="btn btn-sign" onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">Sign out</button>
+          <button class="btn btn-sign" onclick="location.href='./api/logout.php'" >Sign out</button>
         </div>
       </div>
     </header>
   </div>
 
-  <div class="container-fluid">
+
+  <div class="container-fluid " >
     <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse">
+      <div id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="height:90vh;">
         <div class="position-sticky pt-3">
           <ul class="nav flex-column">
             <li class="nav-item">
@@ -77,28 +78,15 @@
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" href="?do=title">
+              <a class="nav-link active" aria-current="page" href="?do=vote">
                 <span data-feather="home"></span>
                 食材競選內容管理
               </a>
             </li>
-
             <li class="nav-item">
-              <a class="nav-link" href="?do=ad">
-                <span data-feather="file"></span>
-                動態文字廣告管理
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="?do=mvim">
-                <span data-feather="shopping-cart"></span>
-                動畫圖片管理
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="?do=image">
-                <span data-feather="users"></span>
-                校園映象資料管理
+              <a class="nav-link" href="?do=news">
+                <span data-feather="file-text"></span>
+                最新消息資料管理
               </a>
             </li>
             <li class="nav-item">
@@ -111,12 +99,6 @@
               <a class="nav-link" href="?do=bottom">
                 <span data-feather="layers"></span>
                 頁尾版權資料管理
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="?do=news">
-                <span data-feather="file-text"></span>
-                最新消息資料管理
               </a>
             </li>
             <li class="nav-item">
@@ -134,12 +116,13 @@
 
           </ul>
         </div>
-      </nav>
+</div>
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
         <!-- 預留其它功能按鈕 -->
-        <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <!-- 
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Dashboard</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
@@ -151,7 +134,8 @@
               This week
             </button>
           </div>
-        </div> -->
+        </div> 
+      -->
         <!-- 動畫 折線圖 -->
 
         <!-- 引入頁面 start -->

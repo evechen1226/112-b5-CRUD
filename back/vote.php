@@ -33,9 +33,9 @@
 	}
 </style>
 <div>
-	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-2">
 		<h3>食材競選內容管理</h3>
-		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" ><i class="fa-solid fa-plus"></i></button>
+		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')"><i class="fa-solid fa-plus"></i></button>
 	</div>
 
 
@@ -84,7 +84,7 @@
 				} ?>
 			</tbody>
 		</table>
-		<div class="text-center ">
+		<div class="text-center mb-1">
 			<?php
 			if ($now >= 1) {
 				// echo "<a href='?do=$do&p='".($now-1)."</a>";
@@ -105,7 +105,7 @@
 			}
 			?>
 		</div>
-		<div class="container text-center">
+		<div class="container text-center mb-3">
 			<div class="row">
 				<div class="col">
 					<input class="btn btn-warning" type="submit" value="修改確定">

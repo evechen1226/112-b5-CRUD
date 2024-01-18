@@ -33,7 +33,7 @@
 	}
 </style>
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
-	<h3>最新消息資料管理</h3>
+	<h3 class="mt-3">最新消息資料管理</h3>
 
 	<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')"><i class="fa-solid fa-plus"></i></button>
 </div>

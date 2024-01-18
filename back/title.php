@@ -33,9 +33,10 @@
 	}
 </style>
 <div>
-	<h3>網站標題管理</h3>
+	
 
-	<div class="d-flex">
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
+		<h3 class="mt-3">網站標題管理</h3>
 		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"><i class="fa-solid fa-plus"></i></button>
 	</div>
 
@@ -50,7 +51,7 @@
 						<th class="col">顯示</th>
 						<th class="col">刪除</th>
 						<th class="col"></th>
-						</tr>
+					</tr>
 				</thead>
 				<?php $rows = $Title->all();
 				foreach ($rows as $row) {
