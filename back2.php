@@ -51,8 +51,8 @@
     <header class="navbar bg-green sticky-top flex-md-nowrap p-0 shadow">
       <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2" href="#"><i class="fa-solid fa-seedling me-1"></i>Green Planet</a>
       <div class="flex"><button class="mx-auto navbar-toggler position-absolute d-md-none collapsed me-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      </button></div>
-      
+        </button></div>
+
 
       <!-- 搜尋列 -->
       <!-- <input id="searchInput" class="form-control form-control-dark w-100" type="text" placeholder="請輸入管理選單名稱，按下Enter。" aria-label="Search"> -->
@@ -76,6 +76,13 @@
                 網站標題管理
               </a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="?do=title">
+                <span data-feather="home"></span>
+                食材競選內容管理
+              </a>
+            </li>
+
             <li class="nav-item">
               <a class="nav-link" href="?do=ad">
                 <span data-feather="file"></span>
@@ -131,7 +138,8 @@
 
       <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
 
-        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+        <!-- 預留其它功能按鈕 -->
+        <!-- <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
           <h1 class="h2">Dashboard</h1>
           <div class="btn-toolbar mb-2 mb-md-0">
             <div class="btn-group me-2">
@@ -143,8 +151,8 @@
               This week
             </button>
           </div>
-        </div>
-        <!-- 動畫 拆線圖 -->
+        </div> -->
+        <!-- 動畫 折線圖 -->
 
         <!-- 引入頁面 start -->
         <?php

@@ -33,8 +33,13 @@
 	}
 </style>
 <div>
-	<h3>食材競選內容管理</h3>
-	<div class="d-flex"><button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value=" 新增網站標題圖片"><i class="fa-solid fa-plus"></i></button></div>
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
+		<h3>食材競選內容管理</h3>
+		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value=" 新增網站標題圖片"><i class="fa-solid fa-plus"></i></button>
+	</div>
+
+
+
 
 	<form method="post" action="../api/edit.php">
 		<table width="100%" class="table table-striped text-center align-middle">
@@ -47,8 +52,14 @@
 					<th class="">刪除</th>
 				</tr>
 				<?php
+				$total = $Vote->count();
+				$div = 4;
+				$pages = ceil($total / $div);
 
-				$rows = $Vote->all();
+				$now = $_GET['p'] ?? 1;
+				$strat = ($now - 1) * $div;
+
+				$rows = $Vote->all("limit $strat,$div");
 				foreach ($rows as $row) {
 				?><tr>
 						<td class="col-3"><img class="rounded" src="./img/<?= $row['img']; ?>" alt="">
@@ -56,11 +67,11 @@
 						</td>
 						<td class="col-5">
 							<textarea class="form-control" style="width: 100%;height:100px;" type="text" name="text[]"><?= $row['text']; ?></textarea>
-							
+
 						</td>
 						<td class="col-1 ">
-							<input class="form-control text-center"  type="number" name="vote[]" value="<?= $row['vote']; ?>">
-						
+							<input class="form-control text-center" type="number" name="vote[]" value="<?= $row['vote']; ?>">
+
 						</td>
 						<td class="col-1">
 							<input class="form-check-input mt-0 " type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
@@ -73,13 +84,34 @@
 				} ?>
 			</tbody>
 		</table>
-		<table style="margin-top:40px; width:70%;">
-			<tbody>
-				<tr><input type="hidden" name="table" value="<?= $do; ?>">
-					<td width="200px"><input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增動態文字廣告"></td>
-					<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="text-center "> <?php
+																										if ($now >= 1) {
+																											// echo "<a href='?do=$do&p='".($now-1)."</a>";
+																											$prev = $now - 1;
+																											echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$prev'> < </a>";
+																										}
+																										for ($i = 1; $i <= $pages; $i++) {
+
+																											$fontsize = ($now == $i) ? '24px' : '16px';
+
+																											echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$i'> $i </a>";
+																										}
+
+																										if ($now < $pages) {
+
+																											$next = $now + 1;
+																											echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$next'> > </a>";
+																										}
+																										?></div>
+		<div class="container text-center">
+			<div class="row">
+				<div class="col">
+					<input class="btn btn-warning" type="submit" value="修改確定">
+					<input class="btn btn-warning" type="reset" value="重置">
+				</div>
+			</div>
+		</div>
+
 	</form>
+
 </div>
