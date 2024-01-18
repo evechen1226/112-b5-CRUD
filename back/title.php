@@ -34,21 +34,17 @@
 </style>
 <div>
 	<h3>網站標題管理</h3>
-	<!-- <form method="post" target="back" action="?do=tii"> -->
-
 
 	<div class="d-flex">
 		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"><i class="fa-solid fa-plus"></i></button>
 	</div>
 
 
-
-
 	<form method="post" action="../api/edit.php">
 		<table width="100%" class="table table-striped text-center align-middle">
 			<tbody>
 				<thead>
-					<tr">
+					<tr>
 						<th class="col">網站標題</th>
 						<th class="col">替代文字</th>
 						<th class="col">顯示</th>

@@ -33,31 +33,37 @@
   }
 
   .btn-sign {
-    border: 2px solid white;
+
     border-radius: .5rem;
     background-color: #54deca;
     font-weight: bold;
 
   }
+
+  .btn-sign:hover {
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(146, 255, 197, 1);
+  }
 </style>
 
 <body>
+  <div class="w-100">
+    <header class="navbar bg-green sticky-top flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2" href="#"><i class="fa-solid fa-seedling me-1"></i>Green Planet</a>
+      <div class="flex"><button class="mx-auto navbar-toggler position-absolute d-md-none collapsed me-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+      </button></div>
+      
 
-  <header class="navbar bg-green sticky-top bg-dark flex-md-nowrap p-0 shadow">
-    <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2 me-0 px-3" href="#"><i class="fa-solid fa-seedling me-3"></i>Green Planet</a>
-    <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+      <!-- 搜尋列 -->
+      <!-- <input id="searchInput" class="form-control form-control-dark w-100" type="text" placeholder="請輸入管理選單名稱，按下Enter。" aria-label="Search"> -->
 
-    <!-- 搜尋列 -->
-    <!-- <input id="searchInput" class="form-control form-control-dark w-100" type="text" placeholder="請輸入管理選單名稱，按下Enter。" aria-label="Search"> -->
-
-    <div class="navbar-nav">
-      <div class="nav-item text-nowrap">
-        <button class="btn px-3 btn-sign" onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">Sign out</button>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <button class="btn btn-sign" onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">Sign out</button>
+        </div>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
   <div class="container-fluid">
     <div class="row">

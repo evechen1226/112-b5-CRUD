@@ -1,66 +1,39 @@
         <div class="container-xxl py-5">
           <div class="container">
             <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-              <h5 class="section-title ff-secondary text-center text-primary fw-normal">Food Menu</h5>
-              <h1 class="mb-5">Green Planet's News</h1>
+              <h5 class="section-title ff-secondary text-center text-primary fw-normal">News</h5>
+              <h1 class="mb-4 f-title">Green Planet's News</h1>
             </div>
             <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.1s">
-              <!-- <ul class="nav nav-pills d-inline-flex justify-content-center border-bottom mb-5">
-                <li class="nav-item">
-                  <a class="d-flex align-items-center text-start mx-3 ms-0 pb-3 active" data-bs-toggle="pill" href="#tab-1">
-                    <i class="fa fa-coffee fa-2x text-primary"></i>
-                    <div class="ps-3">
-                      <small class="text-body">Popular</small>
-                      <h6 class="mt-n1 mb-0">Breakfast</h6>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="d-flex align-items-center text-start mx-3 pb-3" data-bs-toggle="pill" href="#tab-2">
-                    <i class="fa fa-hamburger fa-2x text-primary"></i>
-                    <div class="ps-3">
-                      <small class="text-body">Special</small>
-                      <h6 class="mt-n1 mb-0">Launch</h6>
-                    </div>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a class="d-flex align-items-center text-start mx-3 me-0 pb-3" data-bs-toggle="pill" href="#tab-3">
-                    <i class="fa fa-utensils fa-2x text-primary"></i>
-                    <div class="ps-3">
-                      <small class="text-body">Lovely</small>
-                      <h6 class="mt-n1 mb-0">Dinner</h6>
-                    </div>
-                  </a>
-                </li>
-              </ul> -->
+
               <div class="tab-content">
                 <div id="tab-1" class="tab-pane fade show p-0 active">
                   <div class="row g-4">
-<?php
-				// $total = $DB->count();
-				// $div = 5;
-				// $pages = ceil($total / $div);
-				// //isset()
-				// $now = $_GET['p'] ?? 1;
-				// $strat = ($now - 1) * $div;
+                    <?php
+                    $total = $News->count();
+                    $div = 8;
+                    $pages = ceil($total / $div);
+                    //isset()
+                    $now = $_GET['p'] ?? 1;
+                    $strat = ($now - 1) * $div;
 
-				$rows = $News->all();
-				foreach ($rows as $row) {
-				?>
-                    <div class="col-lg-6">
-                      <div class="d-flex align-items-center">
-                        <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
-                        <div class="w-100 d-flex flex-column text-start ps-4">
-                          <h5 class="d-flex justify-content-between border-bottom pb-2">
-                            <span><?= $row['title']; ?></span>
-                            <span class="text-primary"><?= $row['good']; ?></span>
-                          </h5>
-                          <small class="fst-italic">Ipsum ipsum clita erat amet dolor justo
-                            diam</small>
+                    $rows = $News->all(['sh' => 1]);
+                    foreach ($rows as $row) {
+                    ?>
+                      <div class="col-lg-6">
+                        <div class="d-flex align-items-center">
+                          <img class="flex-shrink-0 img-fluid rounded" src="img/menu-1.jpg" alt="" style="width: 80px;">
+                          <div class="w-100 d-flex flex-column text-start ps-4">
+                            <h5 class="d-flex justify-content-between border-bottom pb-2">
+                              <span><?= $row['title']; ?></span>
+                              <span class="text-primary"><?= $row['good']; ?></span>
+                            </h5>
+
+                            <small class="fst-italic"><?= $row['eng_title']; ?>
+                            </small>
+                          </div>
                         </div>
                       </div>
-                    </div>
                     <?php
                     }
                     ?>
@@ -69,6 +42,34 @@
                 </div>
 
               </div>
+              <div class="text-center">
+                <?php
+                if (!isset($_GET['p']) && $total > $div) {
+                  echo '<a class="fs-4" href="news.php?p=1">more<i class="fa-solid fa-angles-right"></i></a>';
+                } else {
+
+                  if ($now >= 1) {
+                    // echo "<a href='?do=news&p='".($now-1)."</a>";
+                    $prev = $now - 1;
+                    echo "<a href='?do=news&p=$prev'> < </a>";
+                  }
+                  for ($i = 1; $i <= $pages; $i++) {
+
+                    $fontsize = ($now == $i) ? '24px' : '16px';
+
+                    echo "<a href='?do=news&p=$i' style='font-size:$fontsize'>$i</a>";
+                  }
+
+                  if ($now < $pages) {
+
+                    $next = $now + 1;
+                    echo "<a href='?do=news&p=$next'> > </a>";
+                  }
+                }
+                ?>
+
+              </div>
+
             </div>
           </div>
         </div>
