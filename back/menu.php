@@ -16,7 +16,7 @@
                 </tr>
                 <?php
 
-                $rows = $DB->all(['menu_id' => 0]);
+                $rows = $Menu->all(['menu_id' => 0]);
                 foreach ($rows as $row) {
                 ?>
                     <tr>

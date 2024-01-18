@@ -35,7 +35,7 @@
 <div>
 	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
 		<h3>食材競選內容管理</h3>
-		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value=" 新增網站標題圖片"><i class="fa-solid fa-plus"></i></button>
+		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" ><i class="fa-solid fa-plus"></i></button>
 	</div>
 
 
@@ -84,25 +84,27 @@
 				} ?>
 			</tbody>
 		</table>
-		<div class="text-center "> <?php
-																										if ($now >= 1) {
-																											// echo "<a href='?do=$do&p='".($now-1)."</a>";
-																											$prev = $now - 1;
-																											echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$prev'> < </a>";
-																										}
-																										for ($i = 1; $i <= $pages; $i++) {
+		<div class="text-center ">
+			<?php
+			if ($now >= 1) {
+				// echo "<a href='?do=$do&p='".($now-1)."</a>";
+				$prev = $now - 1;
+				echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$prev'> < </a>";
+			}
+			for ($i = 1; $i <= $pages; $i++) {
 
-																											$fontsize = ($now == $i) ? '24px' : '16px';
+				$fontsize = ($now == $i) ? '24px' : '16px';
 
-																											echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$i'> $i </a>";
-																										}
+				echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$i'> $i </a>";
+			}
 
-																										if ($now < $pages) {
+			if ($now < $pages) {
 
-																											$next = $now + 1;
-																											echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$next'> > </a>";
-																										}
-																										?></div>
+				$next = $now + 1;
+				echo "<a class='fs-4 text-decoration-none text-warning' href='?do=$do&p=$next'> > </a>";
+			}
+			?>
+		</div>
 		<div class="container text-center">
 			<div class="row">
 				<div class="col">

@@ -25,6 +25,8 @@ foreach ($_POST['id'] as $key => $id) {
             case "admin":
                 $row['acc'] = $_POST['acc'][$key];
                 $row['pw'] = $_POST['pw'][$key];
+                $row['surname'] = $_POST['surname'][$key];
+                $row['name'] = $_POST['name'][$key];
                 break;
             case "menu":
                 $row['href'] = $_POST['href'][$key];
