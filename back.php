@@ -49,7 +49,7 @@
 <body>
   <div class="">
     <header class="navbar bg-green sticky-top flex-md-nowrap p-0 shadow">
-      <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2" href="#"><i class="fa-solid fa-seedling me-1"></i>Green Planet</a>
+      <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2" href="index.php"><i class="fa-solid fa-seedling me-1"></i>Green Planet</a>
       <div class="flex"><button class="mx-auto navbar-toggler position-absolute d-md-none collapsed me-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
         </button></div>
 

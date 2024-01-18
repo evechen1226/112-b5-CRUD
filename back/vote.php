@@ -62,8 +62,10 @@
 				$rows = $Vote->all("limit $strat,$div");
 				foreach ($rows as $row) {
 				?><tr>
-						<td class="col-3"><img class="rounded" src="./img/<?= $row['img']; ?>" alt="">
+						<td class="col-3">
+							<img class="rounded" src="./img/<?= $row['img']; ?>" alt="">
 							<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
+
 						</td>
 						<td class="col-5">
 							<textarea class="form-control" style="width: 100%;height:100px;" type="text" name="text[]"><?= $row['text']; ?></textarea>
@@ -113,7 +115,7 @@
 				</div>
 			</div>
 		</div>
-
+		<input type="hidden" name="table" value="<?= $do; ?>">
 	</form>
 
 </div>

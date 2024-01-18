@@ -2,6 +2,7 @@
 
 $table = $_POST['table'];
 // $DB=${ucfirst($_POST['table'])};
+
 $DB = ${ucfirst($table)};
 unset($_POST['table']);
 

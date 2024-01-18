@@ -29,10 +29,14 @@
             color: wheat;
             font-weight: bold;
           }
+
+          .nav-link{
+            font-weight: bold !important;
+          }
         </style>
         <div class="container-xxl position-relative p-0">
           <nav class="navbar navbar-expand-lg navbar-dark bg-green px-4 px-lg-5 py-3 py-lg-0">
-            <a href="" class="navbar-brand p-0">
+            <a href="index.php" class="navbar-brand p-0">
               <h1 class="text-primary m-0 title-font nav-icon"><i class="fa-solid fa-seedling me-3"></i>Green Planet</h1>
               <!-- <img src="img/logo.png" alt="Logo"> -->
             </a>
@@ -41,35 +45,36 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
               <div class="navbar-nav ms-auto py-0 pe-4 nav-text">
-                <a href="index.html" class="nav-item nav-link active">Home</a>
+                <a href="index.php" class="nav-item nav-link active">Home</a>
                 <a href="#about" class="nav-item nav-link">關於我們</a>
-                <a href="service.html" class="nav-item nav-link">提供服務</a>
-                <a href="menu.html" class="nav-item nav-link">餐點選單</a>
+                <a href="news.php" class="nav-item nav-link">最新消息</a>
+                <a href="#" class="nav-item nav-link">餐點選單</a>
                 <div class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">分店資訊</a>
                   <div class="dropdown-menu m-0">
-                    <a href="booking.html" class="dropdown-item">生機之源</a>
-                    <a href="team.html" class="dropdown-item">植福素坊</a>
-                    <a href="testimonial.html" class="dropdown-item">天然味屋</a>
+                    <a href="#" class="dropdown-item">生機之源</a>
+                    <a href="#" class="dropdown-item">植福素坊</a>
+                    <a href="#" class="dropdown-item">天然味屋</a>
                   </div>
                 </div>
-                <a href="contact.html" class="nav-item nav-link">聯絡我們</a>
+                <a href="#footer" class="nav-item nav-link">聯絡我們</a>
               </div>
               <!-- <a href="" class="btn btn-primary py-2 px-4">sing </a> -->
 
               <?php
+
               if (!isset($_SESSION['user'])) {
               ?>
-                <button class="btn btn-primary btn-sign" onclick="login()" data-bs-toggle="modal" data-bs-target="#myModal">Sign In</button>
+                <button class="btn btn-primary btn-sign" data-bs-toggle="modal" data-bs-target="#myModal">Sign In</button>
               <?php
               } else {
               ?>
                 <div class="user me-3">歡迎 <?= $_SESSION['user']; ?></div>
-                <button class="btn btn-primary btn-sign" onclick="location.href='../api/logout.php'">Sign out</button>
+                <button class="btn btn-primary btn-sign me-3" onclick="location.href='../api/logout.php'">Sign out</button>
                 <?php
                 if ($_SESSION['user'] == 'admin') {
                 ?>
-                  <button onclick="location.href='back.php'">管理</button>
+                  <button class="btn btn-primary btn-sign" onclick="location.href='back.php'">管理</button>
               <?php
                 }
               }

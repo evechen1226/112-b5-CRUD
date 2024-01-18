@@ -123,5 +123,6 @@
 			</div>
 		</div>
 	</div>
+	<input type="hidden" name="table" value="<?= $do; ?>">
 </form>
 </div>
