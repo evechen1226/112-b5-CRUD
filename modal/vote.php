@@ -4,8 +4,8 @@
     }
 
     #preview {
-        width: 50%;
-        height: 190px;
+        width: 30%;
+        height: 30%;
     }
 </style>
 <h3>新增網站標題圖片</h3>
@@ -20,8 +20,8 @@
             <td class=""><input class="form-control" type="file" name="img" id="imgInput" onchange="preImage()"></td>
         </tr>
         <tr>
-            <td class=" col">標題區替代文字</td>
-            <td class=""><input class="form-control" type="text" name="text" id=""></td>
+            <td class="col">介紹內容</td>
+            <td class=""><textarea class="form-control" type="text" name="text" style="width:100%;height: 100px;"></textarea></td>
         </tr>
     </table>
     <div class="text-center">

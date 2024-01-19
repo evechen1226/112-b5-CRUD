@@ -48,77 +48,34 @@
 
 
         <!-- Navbar & Hero Start -->
-        <?php include "./front/navbar.php"; ?>
-        <!-- Navbar & Hero Start end-->
+        <div class="container-xxl position-relative p-0">
+            <!-- Navbar & Hero Start -->
+            <?php include "./front/navbar.php"; ?>
+            <!-- Navbar & Hero Start end-->
 
-        <?php
-        $title = $Title->find(['sh' => 1]);
-        ?>
+            <div class="container-xxl py-5  hero-header mb-5">
+                <div class="container text-center pt-5 pb-4">
+                    <h3 class="display-3 text-white mb-3 animated slideInDown">最新消息</h3>
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center text-uppercase">
+                            <li class="breadcrumb-item"><a href="index.php">Home</a></li>
 
-        <a title="<?= $title['text']; ?>" href="index.php">
-            <div class="ti" style="background:url('./img/<?= $title['img']; ?>'); background-size:cover;"></div>
-            <!--標題-->
-        </a>
-        <div class="container-xxl py-5 bg-dark hero-header mb-5" style="background:url('./img/<?= $title['img']; ?>'); background-size:cover;">
-            <div class="container mt-5 py-5 mt-5">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6 text-center text-lg-start">
-                        <h1 class="display-3 text-white animated slideInLeft title-font">Enjoy Our<br>Delicious Meal</h1>
-                        <p class="text-white animated slideInLeft mb-4 pb-2">以新鮮、有機的自然食材為基礎，主打美味的蔬食料理。每道菜品都融入大自然的綠意，呈現獨特的風味，滿足您對美好飲食的追求，是喜愛蔬食生活的理想選擇。</p>
-                        <a href="" class="btn btn-primary py-sm-3 px-sm-5 me-3 animated slideInLeft">Book A
-                            Table</a>
-                    </div>
-                    <div class="col-lg-6 text-center text-lg-end overflow-hidden">
-                        <!-- <img class="img-fluid" src="img/hero.png" alt=""> -->
-                    </div>
+                            <li class="breadcrumb-item text-white active" aria-current="page">NEWS</li>
+                        </ol>
+                    </nav>
                 </div>
             </div>
         </div>
         <!-- Navbar & Hero End -->
 
-
-        <!-- Vote Start -->
-        <?php include "./front/vote.php"; ?>
-
-        <!-- Vote End -->
-
-
-        <!-- About Start -->
-        <?php include "./front/about.php"; ?>
-        <!-- About End -->
-
-
         <!-- Menu Start -->
-        <?php include "./front/menu.php"; 
+        <?php include "./front/menu.php";
         ?>
         <!-- Menu End -->
 
 
-        <!-- Reservation Start -->
-        <?php //include "./front/reservation.php"; 
-        ?>
-        <!-- Reservation Start -->
-
-
-        <!-- Team Start -->
-        <?php //include "./front/team.php"; 
-        ?>
-        <!-- Team End -->
-
-
-        <!-- Testimonial Start -->
-        <?php //include "./front/testimonail.php"; 
-        ?>
-        <!-- Testimonial End -->
-
-
-        <!-- Footer Start -->
-        <?php include "./front/footer.php"; ?>
-        <!-- Footer End -->
-
-
         <!-- Back to Top -->
-        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="bi bi-arrow-up"></i></a>
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top"><i class="fa-solid fa-arrow-up"></i></a>
     </div>
 
     <!-- JavaScript Libraries -->

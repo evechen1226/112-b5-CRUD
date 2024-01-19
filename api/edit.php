@@ -2,6 +2,7 @@
 
 $table = $_POST['table'];
 // $DB=${ucfirst($_POST['table'])};
+
 $DB = ${ucfirst($table)};
 unset($_POST['table']);
 
@@ -25,9 +26,16 @@ foreach ($_POST['id'] as $key => $id) {
             case "admin":
                 $row['acc'] = $_POST['acc'][$key];
                 $row['pw'] = $_POST['pw'][$key];
+                $row['surname'] = $_POST['surname'][$key];
+                $row['name'] = $_POST['name'][$key];
                 break;
             case "menu":
                 $row['href'] = $_POST['href'][$key];
+                $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
+                break;
+            case "vote":
+                $row['vote']
+                = $_POST['vote'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
             default:

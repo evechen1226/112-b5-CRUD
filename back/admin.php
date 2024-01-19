@@ -1,50 +1,90 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-	<p class="t cent botli">管理者帳號管理</p>
-	<!-- <form method="post" target="back" action="?do=tii"> -->
-	<form method="post" action="../api/edit.php">
-		<table width="100%">
-			<tbody>
-				<tr class="yel">
-					<td width="20%">帳號</td>
-					<td width="20%">密碼</td>
-					<td width="20%">姓氏</td>
-					<td width="20%">名字</td>
-					<td class="ct" width="5%">刪除</td>
-				</tr>
-				<?php
+<style>
+	img {
+		width: 200px;
+		height: 100px;
+	}
 
-				$rows = $Admin->all();
-				foreach ($rows as $row) {
-				?>
-					<tr>
-						<td>
-							<input type="text" name="acc[]" value="<?= $row['acc']; ?>" style="width:90%">
-							<input type="hidden" name="id[]" value="<?= $row['id'] ?>">
-						</td>
+	.form-check-input {
+		scale: 1.2;
+		border: 1px solid lightslategray;
+	}
 
-						<td><input type="text" name="pw[]" value="<?= $row['pw']; ?>" style="width:90%">
-						</td>
-						<td><input type="text" name="pw[]" value="<?= $row['surname']; ?>" style="width:90%">
-						</td>
-						<td><input type="text" name="pw[]" value="<?= $row['name']; ?>" style="width:90%">
-						</td>
+	.btn-green {
+		background-color: #54deca;
+	}
 
-						<td><input type="checkbox" name="del[]" value="<?= $row['id']; ?>">
-						</td>
+	.btn-green:hover {
+		background-color: #1E9D8A;
+		color: white;
+	}
 
-					</tr>
-				<?php
-				} ?>
-			</tbody>
-		</table>
-		<table style="margin-top:40px; width:70%;">
-			<tbody>
+	.btn-green:active {
+		background-color: #1E9D8A !important;
+		color: white !important;
+	}
+
+	.form-check-input:checked[type="checkbox"] {
+		background-color: #1E9D8A;
+
+	}
+
+	.form-check-input:checked[type="radio"] {
+		background-color: #1E9D8A;
+	}
+</style>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
+	<h3 class="mt-3">帳號管理</h3>
+	<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')"><i class="fa-solid fa-plus"></i></button>
+
+</div>
+
+<form method="post" action="../api/edit.php">
+	<table width="100%" class="table table-striped text-center align-middle">
+		<tbody>
+			<tr class="">
+				<td class="">帳號</td>
+				<td class="">密碼</td>
+				<td class="">姓氏</td>
+				<td class="">名字</td>
+				<td class="">刪除</td>
+			</tr>
+			<?php
+
+			$rows = $Admin->all();
+			foreach ($rows as $row) {
+			?>
 				<tr>
-					<input type="hidden" name="table" value="<?= $do; ?>">
-					<td width="200px"><input type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增動態文字廣告"></td>
-					<td class="cent"><input type="submit" value="修改確定"><input type="reset" value="重置"></td>
+					<td>
+						<input class="form-control" type="text" name="acc[]" value="<?= $row['acc']; ?>">
+						<input type="hidden" name="id[]" value="<?= $row['id'] ?>">
+					</td>
+
+					<td><input class="form-control" type="text" name="pw[]" value="<?= $row['pw']; ?>">
+					</td>
+					<td><input class="form-control" type="text" name="surname[]" value="<?= $row['surname']; ?>">
+					</td>
+					<td><input class="form-control" type="text" name="name[]" value="<?= $row['name']; ?>">
+					</td>
+
+					<td><input class="form-check-input mt-0 " type="checkbox" name="del[]" value="<?= $row['id']; ?>">
+					</td>
+
 				</tr>
-			</tbody>
-		</table>
-	</form>
+			<?php
+			} ?>
+		</tbody>
+	</table>
+
+
+	<div class="container text-center">
+		<input type="hidden" name="table" value="<?= $do; ?>">
+		<div class="row">
+			<div class="col">
+				<input class="btn btn-warning" type="submit" value="修改確定">
+				<input class="btn btn-warning" type="reset" value="重置">
+			</div>
+		</div>
+	</div>
+
+</form>
 </div>

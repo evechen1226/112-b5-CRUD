@@ -1,138 +1,193 @@
-﻿<?php include_once "./api/db.php";
-
-?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<!-- saved from url=(0068)?do=admin&redo=title -->
-<html xmlns="http://www.w3.org/1999/xhtml">
+<?php include_once "./api/db.php"; ?>
+<!doctype html>
+<html lang="en">
 
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.84.0">
+  <title>Green Planet 管理後台</title>
 
-	<title>卓越科技大學校園資訊系統</title>
 
-	<link href="./css/css.css" rel="stylesheet" type="text/css">
-	<script src="./js/jquery-1.9.1.min.js"></script>
-	<script src="./js/js.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" integrity="sha512-b2QcS5SsA8tZodcDtGRELiGv5SaKSk1vDHDaQRda0htPYWZ6046lr3kJ5bAAQdpV2mmA/4v0wQF9MyU6/pDIAg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <!-- 原始的link -->
+  <link href="./css/css.css" rel="stylesheet" type="text/css">
+  <script src="./js/jquery-1.9.1.min.js"></script>
+  <script src="./js/js.js"></script>
 
 </head>
+<style>
+  .bg-green {
+    background-color: #1E9D8A !important;
+    color: white !important;
+  }
+
+  .nav-text {
+    font-family: 'Amatic SC', sans-serif;
+  }
+
+  .btn-sign {
+
+    border-radius: .5rem;
+    background-color: #54deca;
+    font-weight: bold;
+
+  }
+
+  .btn-sign:hover {
+    border: 2px solid white;
+    box-shadow: 0 0 10px rgba(146, 255, 197, 1);
+  }
+</style>
 
 <body>
-
-	<div id="cover" style="display:none; ">
-		<div id="coverr">
-			<a style="position:absolute; right:3px; top:4px; cursor:pointer; z-index:9999;" onclick="cl('#cover')">X</a>
-			<div id="cvr" style="position:absolute; width:99%; height:100%; margin:auto; z-index:9898;"></div>
-		</div>
-	</div>
-	<!-- <iframe style="display:none;" name="back" id="back"></iframe> -->
-	<div id="main">
-
-		<!-- 顯示標題圖片 php -->
-		<?php
-		$title = $Title->find(['sh' => 1]);
-		?>
-		<!-- 顯示標題圖片 php END -->
-
-		<a title="<?= $title['text']; ?>" href="index.php">
-			<div class="ti" style="background:url('./img/<?= $title['img']; ?>'); background-size:cover;"></div><!--標題-->
-		</a>
-		<div id="ms">
-			<div id="lf" style="float:left;">
-				<div id="menuput" class="dbor">
-					<!--主選單放此-->
-					<span class="t botli">後台管理選單</span>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=title.php">
-						<div class="mainmu">
-							網站標題管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=ad">
-						<div class="mainmu">
-							動態文字廣告管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=mvim">
-						<div class="mainmu">
-							動畫圖片管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=image">
-						<div class="mainmu">
-							校園映象資料管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=total">
-						<div class="mainmu">
-							進站總人數管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=bottom">
-						<div class="mainmu">
-							頁尾版權資料管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=news">
-						<div class="mainmu">
-							最新消息資料管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=admin">
-						<div class="mainmu">
-							管理者帳號管理 </div>
-					</a>
-					<a style="color:#000; font-size:13px; text-decoration:none;" href="?do=menu">
-						<div class="mainmu">
-							選單管理 </div>
-					</a>
+  <div class="">
+    <header class="navbar bg-green sticky-top flex-md-nowrap p-0 shadow">
+      <a class="navbar-brand nav-text bg-green col-md-3 col-lg-2" href="index.php"><i class="fa-solid fa-seedling me-1"></i>Green Planet</a>
+      <div class="flex"><button class="mx-auto navbar-toggler position-absolute d-md-none collapsed me-3" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+        </button></div>
 
 
-				</div>
-				<div class="dbor" style="margin:3px; width:95%; height:20%; line-height:100px;">
-					<span class="t">進站總人數 : //$Total->find(1)['total']; </span>
+      <!-- 搜尋列 -->
+      <!-- <input id="searchInput" class="form-control form-control-dark w-100" type="text" placeholder="請輸入管理選單名稱，按下Enter。" aria-label="Search"> -->
 
-				</div>
-			</div>
-			<div class="di" style="height:540px; border:#999 1px solid; width:76.5%; margin:2px 0px 0px 0px; float:left; position:relative; left:20px;">
-				<!--正中央-->
-				<table width="100%">
-					<tbody>
-						<tr>
-							<td style="width:70%;font-weight:800; border:#333 1px solid; border-radius:3px;" class="cent"><a href="?do=admin" style="color:#000; text-decoration:none;">後台管理區</a>
-							</td>
-							<td><button onclick="location.href='./api/logout.php'" style="width:99%; margin-right:2px; height:50px;">管理登出</button></td>
-						</tr>
-					</tbody>
-				</table>
-				<!-- back/title.php -->
-				<?php
-				$do = $_GET['do'] ?? 'title';
-				$file = "./back/{$do}.php";
-				if (file_exists($file)) {
-					include $file;
-				} else {
-					include "./back/title.php";
-				}
-				?>
+      <div class="navbar-nav">
+        <div class="nav-item text-nowrap">
+          <button class="btn btn-sign" onclick="location.href='./api/logout.php'" >Sign out</button>
+        </div>
+      </div>
+    </header>
+  </div>
 
-				<!-- back/title.php end-->
-			</div>
-			<div id="alt" style="position: absolute; width: 350px; min-height: 100px; word-break:break-all; text-align:justify;  background-color: rgb(255, 255, 204); top: 50px; left: 400px; z-index: 99; display: none; padding: 5px; border: 3px double rgb(255, 153, 0); background-position: initial initial; background-repeat: initial initial;">
-			</div>
-			<script>
-				$(".sswww").hover(
-					function() {
-						$("#alt").html("" + $(this).children(".all").html() + "").css({
-							"top": $(this).offset().top - 50
-						})
-						$("#alt").show()
-					}
-				)
-				$(".sswww").mouseout(
-					function() {
-						$("#alt").hide()
-					}
-				)
-			</script>
-		</div>
-		<div style="clear:both;"></div>
-		<div style="width:1024px; left:0px; position:relative; background:#FC3; margin-top:4px; height:123px; display:block;">
-			<span class="t" style="line-height:123px;"> //$Bottom->find(1)['bottom']; </span>
-		</div>
-	</div>
 
+  <div class="container-fluid " >
+    <div class="row">
+      <div id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse" style="height:90vh;">
+        <div class="position-sticky pt-3">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="?do=title">
+                <span data-feather="home"></span>
+                網站標題管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="?do=vote">
+                <span data-feather="home"></span>
+                食材競選內容管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?do=news">
+                <span data-feather="file-text"></span>
+                最新消息資料管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?do=total">
+                <span data-feather="bar-chart-2"></span>
+                進站總人數管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?do=bottom">
+                <span data-feather="layers"></span>
+                頁尾版權資料管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?do=admin">
+                <span data-feather="file-text"></span>
+                管理者帳號管理
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="?do=menu">
+                <span data-feather="file-text"></span>
+                選單管理
+              </a>
+            </li>
+
+          </ul>
+        </div>
+</div>
+
+      <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+
+        <!-- 預留其它功能按鈕 -->
+        <!-- 
+        <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+          <h1 class="h2">Dashboard</h1>
+          <div class="btn-toolbar mb-2 mb-md-0">
+            <div class="btn-group me-2">
+              <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
+              <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
+            </div>
+            <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+              <span data-feather="calendar"></span>
+              This week
+            </button>
+          </div>
+        </div> 
+      -->
+        <!-- 動畫 折線圖 -->
+
+        <!-- 引入頁面 start -->
+        <?php
+        $do = $_GET['do'] ?? 'title';
+        $file = "./back/{$do}.php";
+        if (file_exists($file)) {
+          include $file;
+        } else {
+          include "./back/title.php";
+        }
+        ?>
+        <!-- 引入頁面 end-->
+
+      </main>
+    </div>
+  </div>
+
+
+
+  <!-- modal start -->
+  <div id="cover" style="display:none; ">
+    <div id="coverr">
+      <div id="cvr" class="container p-3" style="position:absolute; margin:auto; z-index:9898;"></div>
+      <div class="modal-footer d-flex ">
+        <button type="button" class="btn " onclick="cl('#cover')" style="z-index:9999"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+    </div>
+  </div>
+  <!-- modal end -->
+
+  <script>
+    // 取得搜尋框元素
+    let searchInput = document.getElementById('searchInput');
+
+    // 監聽按鍵事件
+    searchInput.addEventListener('keydown', function(event) {
+      // 按下 Enter 鍵（keyCode 13）
+      if (event.keyCode === 13) {
+        // 取得搜尋框的值
+        let searchTerm = searchInput.value.trim();
+
+        // 如果搜尋框有值，則導向到指定的頁面
+        if (searchTerm !== '') {
+          // 導向到網站標題管理頁面
+          window.location.href = '?do=title';
+        }
+      }
+    });
+  </script>
+
+  <script src=" https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.min.js" integrity="sha512-WW8/jxkELe2CAiE4LvQfwm1rajOS8PHasCCx+knHG0gBHt8EXxS6T6tJRTGuDQVnluuAvMxWF4j8SNFDKceLFg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 </body>
 
 </html>

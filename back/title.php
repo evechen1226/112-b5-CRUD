@@ -33,26 +33,25 @@
 	}
 </style>
 <div>
-	<h3>網站標題管理</h3>
-	<!-- <form method="post" target="back" action="?do=tii"> -->
+	
 
-
-			
-				<input class="btn btn-green mx-end" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片">
-
+	<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
+		<h3 class="mt-3">網站標題管理</h3>
+		<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')" value="新增網站標題圖片"><i class="fa-solid fa-plus"></i></button>
+	</div>
 
 
 	<form method="post" action="../api/edit.php">
 		<table width="100%" class="table table-striped text-center align-middle">
 			<tbody>
 				<thead>
-					<tr">
+					<tr>
 						<th class="col">網站標題</th>
 						<th class="col">替代文字</th>
 						<th class="col">顯示</th>
 						<th class="col">刪除</th>
 						<th class="col"></th>
-						</tr>
+					</tr>
 				</thead>
 				<?php $rows = $Title->all();
 				foreach ($rows as $row) {
