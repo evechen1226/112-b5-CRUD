@@ -70,14 +70,11 @@
 
 					<td class="col text-cnter">
 						<textarea class="form-control" type="text" name="eng_title[]" id="" style="width:90%;height:60px;"><?= $row['eng_title']; ?></textarea>
-						<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
 
 					</td>
 
 					<td class="col text-cnter">
 						<textarea class="form-control" type="text" name="text[]" id="" style="width:90%;height:60px;"><?= $row['text']; ?></textarea>
-						<input type="hidden" name="id[]" value="<?= $row['id']; ?>">
-
 					</td>
 					<td class="" style="width:10%;">
 						<input class="form-control text-center" type="number" name="good[]" value="<?= $row['good']; ?>">
