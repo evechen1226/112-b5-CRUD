@@ -45,7 +45,7 @@ foreach ($_POST['id'] as $key => $id) {
                 $row['text'] = $_POST['text'][$key];
                 $row['good'] = $_POST['good'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
-                $row['total'] = $_POST['total'][$key];
+                $row['total']=$_POST['total'][$key];
                 $row['date'] =  $_POST['date'][$key];
                 break;
             default:
@@ -54,7 +54,8 @@ foreach ($_POST['id'] as $key => $id) {
 
 
         $DB->save($row);
+        dd($row);
     }
 }
 
-// to("../back.php?do=$table");
+to("../back.php?do=$table");

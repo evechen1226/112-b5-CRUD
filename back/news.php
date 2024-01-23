@@ -45,6 +45,8 @@
 				<th>英文標題</th>
 				<th>內容</th>
 				<th>按鑽數</th>
+				<th>總閱覽數</th>
+				<th>發表日期</th>
 				<th>顯示</th>
 				<th>刪除</th>
 				<!-- <th>日期</th> -->
@@ -57,7 +59,7 @@
 			$now = $_GET['p'] ?? 1;
 			$strat = ($now - 1) * $div;
 
-			$rows = $News->all("limit $strat,$div");
+			$rows = $News->all("order by date limit $strat,$div");
 			foreach ($rows as $row) {
 			?>
 				<tr>
@@ -76,9 +78,14 @@
 					<td class="col text-cnter">
 						<textarea class="form-control" type="text" name="text[]" id="" style="width:90%;height:60px;"><?= $row['text']; ?></textarea>
 					</td>
-					<td class="" style="width:10%;">
+					<td class="" style="width:5%;">
 						<input class="form-control text-center" type="number" name="good[]" value="<?= $row['good']; ?>">
-
+					</td>
+					<td class="" style="width:5%;">
+						<input class="form-control text-center" type="number" name="total[]" value="<?= $row['total']; ?>">
+					</td>
+					<td class="" style="width:5%;">
+						<input class="form-control text-center" type="date" name="date[]" value="<?= $row['date']; ?>">
 					</td>
 					<td><input class="form-check-input mt-0 " type="checkbox" name="sh[]" value="<?= $row['id']; ?>" <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
 					</td>
