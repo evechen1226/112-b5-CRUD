@@ -11,7 +11,7 @@
 <h3>新增網站標題圖片</h3>
 <div class="text-center my-3">
     <!-- 用於顯示選擇的圖片 -->
-    <img id="preview" src="../img/img0.png" alt="圖片預覽" style="max-height: 190px;">
+    <img id="preview" src="./img/img0.png" alt="圖片預覽" style="max-height: 190px;">
 </div>
 <form action="./api/add.php" method="post" enctype="multipart/form-data">
     <table class="table text-center align-middle">

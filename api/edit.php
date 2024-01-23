@@ -20,6 +20,9 @@ foreach ($_POST['id'] as $key => $id) {
 // 測試輸出資料是否有誤
 // dd($table);
         switch ($table) {
+            case "titles":
+                $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
+                break;
             case "table":
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
                 break;

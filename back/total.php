@@ -1,33 +1,64 @@
-<div style="width:99%; height:87%; margin:auto; overflow:auto; border:#666 1px solid;">
-	<p class="t cent botli">進站總人數管理</p>
-	<!-- <form method="post" target="back" action="?do=tii"> -->
-	<form method="post" action="../api/edit_total.php">
-		<table style="width:50%;margin:auto">
-			<tbody>
-				<tr class="yel">
-					<td width="50%">進站總人數管理</td>
-					<td width="50%">
-					
-					<!-- <input type="number" name="total" id="" value="<? //=$Total->find(1)['total'];?>"></td> -->
-					
-					<!-- 因為要共用，所以需要增加一input隱藏欄位存入當前網頁名稱 -->
-					<input type="number" name="total" value="<?= $Total->find(1)['total']; ?>">
-					<input type="hidden" name="table" value="total">
+<style>
+	img {
+		width: 200px;
+		height: 100px;
+	}
 
+	.form-check-input {
+		scale: 1.2;
+		border: 1px solid lightslategray;
+	}
+
+	.btn-green {
+		background-color: #54deca;
+	}
+
+	.btn-green:hover {
+		background-color: #1E9D8A;
+		color: white;
+	}
+
+	.btn-green:active {
+		background-color: #1E9D8A !important;
+		color: white !important;
+	}
+
+	.form-check-input:checked[type="checkbox"] {
+		background-color: #1E9D8A;
+
+	}
+
+	.form-check-input:checked[type="radio"] {
+		background-color: #1E9D8A;
+	}
+</style>
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-2">
+	<h3 class="mt-3">進站總人數管理</h3>
+</div>
+<div>
+	<form method="post" action="./api/edit_total.php">
+	<table width="80%" class="table table-striped text-center align-middle">
+			<tbody>
+				<tr>
+					<td>進站總人數管理</td>
+					<td>				
+					<input class="form-control text-center" type="number" name="total" value="<?= $Total->find(1)['total']; ?>">
+					<input class="form-control text-center" type="hidden" name="table" value="total">
+					</td>
 					<td></td>
 				</tr>
 			</tbody>
 		</table>
-		<table style="margin-top:40px; width:100%;">
-			<tbody>
-				<tr>
-					<td class="cent">
-					<input type="submit" value="修改確定">
-					<input type="reset" value="重置">
-					</td>
-				</tr>
-			</tbody>
-		</table>
+		<div class="container text-center mb-3">
+			<div class="row">
+				<div class="col">
+					<input class="btn btn-warning" type="submit" value="修改確定">
+					<input class="btn btn-warning" type="reset" value="重置">
+				</div>
+			</div>
+		</div>
+		<input type="hidden" name="table" value="<?= $do; ?>">
+
 
 	</form>
-</div>
+	</div>

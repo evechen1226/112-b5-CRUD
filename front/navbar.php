@@ -47,7 +47,7 @@
               <div class="navbar-nav ms-auto py-0 pe-4 nav-text">
                 <a href="index.php" class="nav-item nav-link active">Home</a>
                 <a href="#about" class="nav-item nav-link">關於我們</a>
-                <a href="news.php" class="nav-item nav-link">最新消息</a>
+                <a href="news.php?p=1" class="nav-item nav-link">最新消息</a>
                 <a href="#" class="nav-item nav-link">餐點選單</a>
                 <div class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">分店資訊</a>
@@ -70,7 +70,7 @@
               } else {
               ?>
                 <div class="user me-3">歡迎 <?= $_SESSION['user']; ?></div>
-                <button class="btn btn-primary btn-sign me-3" onclick="location.href='../api/logout.php'">Sign out</button>
+                <button class="btn btn-primary btn-sign me-3" onclick="location.href='./api/logout.php'">Sign out</button>
                 <?php
                 if ($_SESSION['user'] == 'admin') {
                 ?>
