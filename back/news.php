@@ -79,10 +79,10 @@
 						<textarea class="form-control" type="text" name="text[]" id="" style="width:90%;height:60px;"><?= $row['text']; ?></textarea>
 					</td>
 					<td class="" style="width:5%;">
-						<input class="form-control text-center" type="number" name="good[]" value="<?= $row['good']; ?>">
+						<input class="form-control text-center" type="number" min="0" name="good[]" value="<?= $row['good']; ?>">
 					</td>
 					<td class="" style="width:5%;">
-						<input class="form-control text-center" type="number" name="total[]" value="<?= $row['total']; ?>">
+						<input class="form-control text-center" type="number" min="0" name="total[]" value="<?= $row['total']; ?>">
 					</td>
 					<td class="" style="width:5%;">
 						<input class="form-control text-center" type="date" name="date[]" value="<?= $row['date']; ?>">
