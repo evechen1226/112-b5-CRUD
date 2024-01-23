@@ -26,7 +26,7 @@
         </tr>
         <tr>
             <td class="col">發表時間</td>
-            <td class=""><input class="form-control" type="date" name="date" id=""></td>
+            <td class=""><input class="form-control" type="date" name="date" id="" value=<?=date('Y-m-d')?>></td>
         </tr>
     </table>
     <div class="text-center">
