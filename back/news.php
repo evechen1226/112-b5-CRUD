@@ -81,7 +81,7 @@
 					<td class="" style="width:5%;">
 						<input class="form-control text-center" type="number" min="0" name="good[]" value="<?= $row['good']; ?>">
 					</td>
-					<td class="" style="width:5%;">
+					<td class="" style="width:8%;">
 						<input class="form-control text-center" type="number" min="0" name="total[]" value="<?= $row['total']; ?>">
 					</td>
 					<td class="" style="width:5%;">

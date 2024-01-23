@@ -24,6 +24,10 @@
             <td class="col">按鑽數</td>
             <td class=""><input class="form-control" type="text" name="good" id=""></td>
         </tr>
+        <tr>
+            <td class="col">發表時間</td>
+            <td class=""><input class="form-control" type="date" name="date" id=""></td>
+        </tr>
     </table>
     <div class="text-center">
         <input type="hidden" name="table" value="<?= $_GET['table'] ?>">
