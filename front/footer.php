@@ -54,7 +54,7 @@
             <div class="copyright">
               <div class="row">
                 <div class="col-md-6 text-center mb-3 text-md-start">
-                  &copy;Evelyn, All Right Reserved. <?= $Bottom->find(1)['bottom']; ?>
+                  &copy;<?= $Bottom->find(1)['bottom']; ?>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
                   <div class="footer-menu">
