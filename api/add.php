@@ -26,9 +26,11 @@ if ($table != 'admin') {
 }
 
 
+
 unset($_POST['table']);
 
 $DB->save($_POST);
+
 if ($table == 'admin') {
     to("../index.php");
 } else {

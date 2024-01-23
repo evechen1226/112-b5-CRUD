@@ -41,7 +41,7 @@
 
 
 
-	<form method="post" action="../api/edit.php">
+	<form method="post" action="./api/edit.php">
 		<table width="100%" class="table table-striped text-center align-middle">
 			<tbody>
 				<tr>

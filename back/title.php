@@ -41,7 +41,7 @@
 	</div>
 
 
-	<form method="post" action="../api/edit.php">
+	<form method="post" action="./api/edit.php">
 		<table width="100%" class="table table-striped text-center align-middle">
 			<tbody>
 				<thead>
@@ -67,7 +67,7 @@
 						</td>
 
 						<td class="">
-							<input class="form-check-input mt-0 " type="radio" name="sh[]" value="<?= $row['id']; ?>" id="">
+							<input class="form-check-input mt-0 " type="radio" name="sh[]" value="<?= $row['id']; ?>"  <?= ($row['sh'] == 1) ? 'checked' : ''; ?>>
 						</td>
 
 						<td>

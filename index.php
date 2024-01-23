@@ -1,5 +1,5 @@
 <?php include_once './api/db.php'; ?>
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 
 <head>
@@ -51,11 +51,13 @@
         <?php include "./front/navbar.php"; ?>
         <!-- Navbar & Hero Start end-->
 
-        <?php
-        $title = $Title->find(['sh' => 1]);
-        ?>
 
-        <!--標題-->
+        <?php
+		$title = $Title->find(['sh' => 1]);
+		?>
+        <a title="<?= $title['text']; ?>" href="index.php">
+            <div style="background:url('./img/<?= $title['img']; ?>'); background-size:cover;"></div>
+            <!--標題-->
         </a>
         <div class="container-xxl py-5 bg-dark hero-header mb-5" style="background:url('./img/<?= $title['img']; ?>'); background-size:cover;">
             <div class="container mt-5 py-5 mt-5">

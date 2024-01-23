@@ -2,7 +2,7 @@
 	<p class="t cent botli">校園映像圖片管理</p>
 
 	<!-- <form method="post" target="back" action="?do=tii"> -->
-	<form method="post" action="../api/edit.php">
+	<form method="post" action="./api/edit.php">
 		<table width="100%">
 			<tbody>
 				<tr class="yel">

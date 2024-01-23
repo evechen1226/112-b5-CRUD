@@ -11,15 +11,17 @@ foreach ($_POST['id'] as $key => $id) {
         $DB->del($id);
     } else {
 
-        //有問題??
         $row = $DB->find($id);
 
         if (isset($row['text'])) {
             $row['text'] = $_POST['text'][$key];
         }
-// 測試輸出資料是否有誤
-// dd($table);
+        // 測試輸出資料是否有誤
+        // dd($table);
         switch ($table) {
+            case "titles":
+                $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
+                break;
             case "table":
                 $row['sh'] = (isset($_POST['sh']) && $_POST['sh'] == $id) ? 1 : 0;
                 break;
@@ -34,17 +36,25 @@ foreach ($_POST['id'] as $key => $id) {
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
                 break;
             case "vote":
-                $row['vote']
-                = $_POST['vote'][$key];
+                $row['vote'] = $_POST['vote'][$key];
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
+                break;
+            case "news":
+                $row['title'] = $_POST['title'][$key];
+                $row['eng_title'] = $_POST['eng_title'][$key];
+                $row['text'] = $_POST['text'][$key];
+                $row['good'] = $_POST['good'][$key];
+                $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
+                $row['total']=$_POST['total'][$key];
+                $row['date'] =  $_POST['date'][$key];
                 break;
             default:
                 $row['sh'] = (isset($_POST['sh']) && in_array($id, $_POST['sh'])) ? 1 : 0;
-
         }
 
 
         $DB->save($row);
+        dd($row);
     }
 }
 
