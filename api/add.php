@@ -25,6 +25,11 @@ if ($table != 'admin') {
     $_POST['sh'] = ($table == 'title') ? 0 : 1;
 }
 
+if($table == 'news'){
+    $_POST['date'] = date('Y-m-d');
+}
+
+
 
 unset($_POST['table']);
 
