@@ -8,8 +8,8 @@
             <button type="button" data-bs-target="#img-carousel" data-bs-slide-to="1" class=" rounded-circle img-carousel-button"></button>
           </div>
           <div class="carousel-inner">
+            <form action='.api/vote.php' method='post'>
 
-            <form action="" method="post">
               <?php
 
               $total = $Vote->count();
@@ -40,10 +40,23 @@
                                   <p><?= $vote['text']; ?></p>
                                   <div class="d-flex justify-content-end">
                                     <p>
-                                      <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
-                                        投票
-                                        <i class=" fa-solid fa-heart"></i>
-                                      </button>
+                                      <?php
+                                      if (isset($_SESSION['user'])) {
+                                      ?>
+                                        <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
+                                          投票
+                                          <i class=" fa-solid fa-heart"></i>
+                                        </button>
+                                      <?php
+                                      } else {
+                                      ?>
+                                        <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
+                                          投票
+                                          <i class=" fa-solid fa-heart"></i>
+                                        </button>
+                                      <?php
+                                      }
+                                      ?>
                                     </p>
                                   </div>
                                 </div>
@@ -70,3 +83,17 @@
           </div>
 
         </div>
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
+
+        <script>
+          $(document).ready(function() {
+            const voteBtn = $('.vote-btn');
+            console.log(voteBtn);
+            voteBtn.click(function() {
+              console.log('ok')
+              alert('請先登入 帳號 或 註冊');
+              //需解決已投票問題
+            })
+          })
+        </script>
