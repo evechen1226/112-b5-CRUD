@@ -1,37 +1,4 @@
-<style>
-	img {
-		width: 200px;
-		height: 100px;
-	}
-
-	.form-check-input {
-		scale: 1.2;
-		border: 1px solid lightslategray;
-	}
-
-	.btn-green {
-		background-color: #54deca;
-	}
-
-	.btn-green:hover {
-		background-color: #1E9D8A;
-		color: white;
-	}
-
-	.btn-green:active {
-		background-color: #1E9D8A !important;
-		color: white !important;
-	}
-
-	.form-check-input:checked[type="checkbox"] {
-		background-color: #1E9D8A;
-
-	}
-
-	.form-check-input:checked[type="radio"] {
-		background-color: #1E9D8A;
-	}
-</style>
+<link rel="stylesheet" href="../css/back.css">
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 my-3">
 	<h3 class="mt-3">帳號管理</h3>
 	<button class="btn btn-green ms-auto" type="button" onclick="op('#cover','#cvr','./modal/<?= $do; ?>.php?table=<?= $do; ?>')"><i class="fa-solid fa-plus"></i></button>
