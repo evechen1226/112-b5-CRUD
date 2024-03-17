@@ -26,7 +26,7 @@
                       <div class="row g-4 rounded-5">
 
                         <?php
-                        // 一頁四個
+                // 一頁四個
                         $rows = $Vote->all(['sh' => 1], " limit $start,$div");
                         foreach ($rows as $idx => $vote) {
                         ?>
@@ -41,15 +41,30 @@
                                   <div class="d-flex justify-content-end">
                                     <p>
                                       <?php
+
                                       if (isset($_SESSION['user'])) {
+                                        if ($Admin->find(['acc' => $_SESSION['user']])['vote'] > 0) {
+
                                       ?>
-                                        <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
-                                          投票
-                                          <i class=" fa-solid fa-heart"></i>
-                                        </button>
-                                      <?php
+                                          <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
+                                           投票總數：<?= $vote['vote']; ?>
+                                            <?php 
+       echo ($Admin->find(['acc' => $_SESSION['user']])['vote']== $vote['id'])? "<i class=' fa-solid fa-heart'></i>" : "";
+        ?>
+                                          </button>
+
+                                        <?php
+                                        } else {
+                                        ?>
+                                          <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
+                                            投票
+                                            <i class=" fa-solid fa-heart"></i>
+                                          </button>
+
+                                        <?php
+                                        }
                                       } else {
-                                      ?>
+                                        ?>
                                         <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
                                           投票
                                           <i class=" fa-solid fa-heart"></i>

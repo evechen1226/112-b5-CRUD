@@ -59,6 +59,7 @@ class DB
         } else {
             echo "錯誤:參數的資料型態比須是數字或陣列";
         }
+        // dd($sql);
         //echo 'find=>'.$sql;
         $row = $this->pdo->query($sql)->fetch(PDO::FETCH_ASSOC);
         return $row;

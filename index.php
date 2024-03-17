@@ -1,6 +1,6 @@
 <?php include_once './api/db.php'; ?>
 <!doctype html>
-<html lang="en">
+<html lang="zh-TW">
 
 <head>
     <meta charset="utf-8">
@@ -53,8 +53,8 @@
 
 
         <?php
-		$title = $Title->find(['sh' => 1]);
-		?>
+        $title = $Title->find(['sh' => 1]);
+        ?>
         <a title="<?= $title['text']; ?>" href="index.php">
             <div style="background:url('./img/<?= $title['img']; ?>'); background-size:cover;"></div>
             <!--標題-->
