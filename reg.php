@@ -109,7 +109,7 @@
                     <div class="row d-flex justify-content-center">
                         <div class="col-lg-10">
                             <h2 class="fw-bold mb-5 f-color">建立 Green Planet 帳戶</h2>
-                            <form action="./api/add.php" method="post" enctype="multipart/form-data">
+                            <form action="./api/reg.php" method="post" enctype="multipart/form-data">
                                 <!-- 2 column grid layout with text inputs for the first and last names -->
                                 <div class="row">
                                     <div class="col-md-6 mb-4 fw-700">
@@ -157,7 +157,6 @@
                                         訂閱最新優惠訊息
                                     </label>
                                 </div>
-                                <input type="hidden" name="table" value="admin">
                                 <!-- Submit button -->
                                 <button type="submit" class="btn bg-green text-light btn-block mb-4 shadow-sm btn-hover me-5" >
                                     註冊
