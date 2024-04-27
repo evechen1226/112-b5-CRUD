@@ -1,9 +1,10 @@
 <?php include_once "db.php";
 
 $res=$Admin->count($_POST);
-
+$row=$Admin->find($_POST);
 if($res){
     $_SESSION['user']=$_POST['acc'];
+    $_SESSION['id']=$row['id'];
 }
 echo $res;
 

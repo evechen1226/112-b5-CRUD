@@ -8,7 +8,7 @@
             <button type="button" data-bs-target="#img-carousel" data-bs-slide-to="1" class=" rounded-circle img-carousel-button"></button>
           </div>
           <div class="carousel-inner">
-            <form action='.api/vote.php' method='post'>
+            <form action='../api/vote.php' method='post'>
 
               <?php
 
@@ -26,7 +26,7 @@
                       <div class="row g-4 rounded-5">
 
                         <?php
-                // 一頁四個
+                        // 一頁四個
                         $rows = $Vote->all(['sh' => 1], " limit $start,$div");
                         foreach ($rows as $idx => $vote) {
                         ?>
@@ -47,16 +47,16 @@
 
                                       ?>
                                           <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
-                                           投票總數：<?= $vote['vote']; ?>
-                                            <?php 
-       echo ($Admin->find(['acc' => $_SESSION['user']])['vote']== $vote['id'])? "<i class=' fa-solid fa-heart'></i>" : "";
-        ?>
+                                            投票總數：<?= $vote['vote']; ?>
+                                            <?php
+                                            echo ($Admin->find(['acc' => $_SESSION['user']])['vote'] == $vote['id']) ? "<i class=' fa-solid fa-heart'></i>" : "";
+                                            ?>
                                           </button>
 
                                         <?php
                                         } else {
                                         ?>
-                                          <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
+                                          <button type="submit" class="btn vote-btn btn-outline-danger me-0" name=id value="<?= $vote['id']; ?>" data-id="<?= $vote['id']; ?>">
                                             投票
                                             <i class=" fa-solid fa-heart"></i>
                                           </button>
@@ -66,7 +66,7 @@
                                       } else {
                                         ?>
                                         <button type="button" class="btn vote-btn btn-outline-danger me-0" data-id="<?= $vote['id']; ?>">
-                                          投票
+                                          請先登入
                                           <i class=" fa-solid fa-heart"></i>
                                         </button>
                                       <?php
@@ -102,13 +102,19 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js"></script>
 
         <script>
-          $(document).ready(function() {
-            const voteBtn = $('.vote-btn');
-            console.log(voteBtn);
-            voteBtn.click(function() {
-              console.log('ok')
-              alert('請先登入 帳號 或 註冊');
-              //需解決已投票問題
-            })
-          })
+          // $(document).ready(function() {
+          //   const voteBtn = $('.vote-btn');
+          //   console.log(voteBtn);
+          //   voteBtn.click(function() {
+          //     console.log('ok')
+
+          //     $.post('./api/chk_session.php', {}, (res) => {
+          //       if (parseInt(res) === 2) {
+          //         alert('請先登入 帳號 或 註冊');
+          //       }
+          //     })
+
+          //     //需解決已投票問題
+          //   })
+          // })
         </script>

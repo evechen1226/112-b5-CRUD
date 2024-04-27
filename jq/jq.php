@@ -1,5 +1,5 @@
         <!-- vote -->
-        <script>
+        <!-- <script>
           $(".vote-btn").on("click", function() {
             let id = $(this).data('id');
             let table = 'sub_vote'
@@ -12,7 +12,7 @@
               console.log(table)
             })
           })
-        </script>
+        </script> -->
 
         <!-- about -->
         <script>

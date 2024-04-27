@@ -85,7 +85,7 @@ class DB
 
             $sql = $sql . $cols . " values " . $vals;
         }
-
+        echo $sql;
         return $this->pdo->exec($sql);
     }
 
@@ -171,7 +171,7 @@ $News = new DB('news');
 $Menu = new DB('menu');
 
 // 112-B5-CRUD 使用資料表
-$Vote= new DB('sub_vote');
+$Vote = new DB('sub_vote');
 $Admin = new DB('admin');
 
 
