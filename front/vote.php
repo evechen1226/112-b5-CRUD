@@ -8,7 +8,7 @@
             <button type="button" data-bs-target="#img-carousel" data-bs-slide-to="1" class=" rounded-circle img-carousel-button"></button>
           </div>
           <div class="carousel-inner">
-            <form action='../api/vote.php' method='post'>
+            <form action='./api/vote.php' method='post'>
 
               <?php
 
