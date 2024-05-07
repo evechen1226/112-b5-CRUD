@@ -21,15 +21,14 @@
                       <div class="conttainer mt-3 page-container" id="page1">
                         <div class="row">
                           <div class="col">
-
-                            <img src="./img/apples-1872997_640.jpg" alt="" srcset="">
+                            <img src="./img/apples-1872997_640.jpg" class='col-12'>
                           </div>
                         </div>
                       </div>
                       <div class="conttainer mt-3 page-container" id="page2">
                         <div class="row">
                           <div class="col">
-                            <img src="./img/flower-3029416_640.jpg" alt="" srcset="">
+                            <img src="./img/flower-3029416_640.jpg" class='col-12'>
 
                           </div>
                         </div>
@@ -37,7 +36,7 @@
                       <div class="conttainer mt-3 page-container" id="page3">
                         <div class="row">
                           <div class="col">
-                            <img src="./img/food-5282718_640.jpg" alt="" srcset="">
+                            <img src="./img/food-5282718_640.jpg" class='col-12'>
 
                           </div>
                         </div>
@@ -45,7 +44,7 @@
                       <div class="conttainer mt-3 page-container" id="page4">
                         <div class="row">
                           <div class="col">
-                            <img src="./img/lifestyle-2569540_640.jpg" alt="" srcset="">
+                            <img src="./img/lifestyle-2569540_640.jpg" class='col-12'>
 
 
                           </div>
